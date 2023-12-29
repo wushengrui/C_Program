@@ -1,11 +1,26 @@
 #include <stdio.h>
+#define N 4
 int main(int argc, const char *argv[])
 {
-    char a[4] = {0x01, 0x02, 0x03, 0x04};
-    unsigned short num = 0;
- 	for(int i = 0; i<4;i++)
-		num = (num<<4) + a[i];
-	printf("%#x\n", num);
+    int nums[N] = {0};
+	int target;
+	int i,j;
+	printf("please input target:");
+	scanf("%d",&target);
+	printf("please input four nums:");
+	for(int a = 0; a < N;a++)
+	{
+		scanf("%d", &nums[a]);
+	}
+	for (i = 0; i < sizeof(nums)/sizeof(nums[0]); i++){
+		for (j = i+1; j <sizeof(nums)/sizeof(nums[0]); j++){
+			if(nums[i] + nums[j] == target)
+			{
+				printf("[%d,%d]\n",i , j);
+				break;
+			}
+		}
+	}
 	return 0;
 }
 
