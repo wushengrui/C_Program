@@ -12,7 +12,6 @@ int main(int argc, const char *argv[])
 	{
 		scanf("%d", &nums[a]);
 	}
-	printf("wushengrui\n");
 	for (i = 0; i < sizeof(nums)/sizeof(nums[0]); i++){
 		for (j = i+1; j <sizeof(nums)/sizeof(nums[0]); j++){
 			if(nums[i] + nums[j] == target)
